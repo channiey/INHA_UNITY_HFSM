@@ -6,12 +6,10 @@ public class State : MonoBehaviour
 {
     public List<Transition> transitions;
 
-
     public virtual void Awake()
     {
-        transitions = new List<Transition>();
-
         // 전이에 대한 설정
+        transitions = new List<Transition>();
     }
 
     public virtual void OnEnable()

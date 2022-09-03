@@ -6,4 +6,7 @@ public class Transition : MonoBehaviour
 {
     public Condition condition;
     public State target;
+
+   
+
 }

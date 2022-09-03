@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class ToFlee : Condition
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Test()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return false;
     }
 }

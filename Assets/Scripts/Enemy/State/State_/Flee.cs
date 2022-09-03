@@ -8,6 +8,9 @@ public class Flee : State
 
     public override void Awake()
     {
+
+        base.Awake();
+
         transition = new Transition();
         transition.condition = new ToSeek();
         transitions.Add(transition);

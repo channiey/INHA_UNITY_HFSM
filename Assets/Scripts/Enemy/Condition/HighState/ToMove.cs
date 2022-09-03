@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class ToMove : Condition
 {
-    GameObject targetObj = GameObject.FindWithTag("Player");
-    GameObject originObj = GameObject.FindWithTag("Enemy");
+    // << Hard..... (다음 Agent 사용하도록 하자)
+    Enemy Obj = null;
+    // >>
 
-    float findDis = 5.0f;
-    float dis;
+   
+
 
     public override bool Test()
     {
-        dis = Vector3.Distance(targetObj.transform.position, originObj.transform.position);
+        //return false;
 
-        if (dis <= findDis)
+        if (Obj.target != null)
             return true;
         else
             return false;
+
+        //return false;
 
     }
 }

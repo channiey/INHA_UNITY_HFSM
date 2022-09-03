@@ -5,11 +5,13 @@ using UnityEngine;
 public class Move : StateHighLevel
 {
     // HFSM
-    Transition transition1;
-    Transition transition2;
+    [SerializeField] Transition transition1;
+    [SerializeField] Transition transition2;
 
     public override void Awake()
     {
+        base.Awake();
+
         // HFSM
         transition1 = new Transition();
         transition1.condition = new ToIdle();
@@ -30,5 +32,8 @@ public class Move : StateHighLevel
 
         sSeek.transitions[0].target = sFlee;
         sFlee.transitions[0].target = sSeek;
+
+        // HFSM - (StateInitial)
+        stateInitial = sSeek;
     }
 }
