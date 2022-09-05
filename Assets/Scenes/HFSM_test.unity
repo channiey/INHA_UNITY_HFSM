@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  HealthMax: 100
   Mana: 100
   speedMove: 5
   speedRotate: 100
@@ -266,8 +267,9 @@ MonoBehaviour:
     m_Bits: 0
   hitTargetList: []
   disAcc: 0
-  maxDisAcc: 15
+  maxDisAcc: 20
   target: {fileID: 0}
+  recoveryHP: 0.05
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

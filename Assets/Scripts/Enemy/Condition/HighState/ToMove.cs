@@ -5,17 +5,18 @@ using UnityEngine;
 public class ToMove : Condition
 {
     // << Hard..... (다음 Agent 사용하도록 하자)
-    Enemy Obj = null;
+    [SerializeField] Enemy Obj = null;
     // >>
 
-   
+    private void Awake()
+    {
+        Obj = this.gameObject.GetComponent<Enemy>();
+    }
 
 
     public override bool Test()
     {
-        //return false;
-
-        if (Obj.target != null)
+        if (Obj.target)
             return true;
         else
             return false;

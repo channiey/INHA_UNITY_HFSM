@@ -16,9 +16,10 @@ public class Patrol : State
     {
         base.Awake();
 
-        transition = new Transition();
-        transition.condition = new ToRecovery();
+        transition = gameObject.AddComponent<Transition>();
+        transition.condition = gameObject.AddComponent<ToRecovery>();
         transitions.Add(transition);
+
 
         // << Hard..... (다음 Agent 사용하도록 하자)
         Obj = this.gameObject.GetComponent<Enemy>();
@@ -27,6 +28,8 @@ public class Patrol : State
 
     public override void Update()
     {
+        Debug.Log("IDLE-PATROL!");
+
         Move();
         DetectTarget();
     }
@@ -60,7 +63,7 @@ public class Patrol : State
                 && !Physics.Raycast(Obj.transform.position, targetDir, Obj.ViewRadius, Obj.ObstacleMask) 
                 && Col.gameObject.tag == "Player")
             {               
-                Debug.DrawLine(Obj.transform.position, targetPos, Color.red);
+                //Debug.DrawLine(Obj.transform.position, targetPos, Color.red);
                 Obj.target = Col.gameObject;                    
             }
             else

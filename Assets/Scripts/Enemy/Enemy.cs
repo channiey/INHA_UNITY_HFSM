@@ -29,7 +29,8 @@ public class Enemy : MonoBehaviour
     private List<State> StateHighlist;
 
     // Basic Variables
-    public float Health = 100;
+    [Range(0f, 100f)] public float Health = 100;
+    public float HealthMax = 100;
     public float Mana = 100;
     public float speedMove = 10;
     public float speedRotate = 100;
@@ -49,6 +50,8 @@ public class Enemy : MonoBehaviour
     public float maxDisAcc = 15.0f;
 
     public GameObject target;
+
+    public float recoveryHP = 0.1f;
 
     private void Awake()
     {

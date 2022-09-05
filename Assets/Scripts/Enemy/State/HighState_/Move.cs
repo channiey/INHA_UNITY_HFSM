@@ -5,20 +5,20 @@ using UnityEngine;
 public class Move : StateHighLevel
 {
     // HFSM
-    [SerializeField] Transition transition1;
-    [SerializeField] Transition transition2;
+    Transition transition1;
+    Transition transition2;
 
     public override void Awake()
     {
         base.Awake();
 
         // HFSM
-        transition1 = new Transition();
-        transition1.condition = new ToIdle();
+        transition1 = gameObject.AddComponent<Transition>();
+        transition1.condition = gameObject.AddComponent<ToIdle>();
         transitions.Add(transition1);
 
-        transition2 = new Transition();
-        transition2.condition = new ToAttack();
+        transition2 = gameObject.AddComponent<Transition>();
+        transition2.condition = gameObject.AddComponent<ToAttack>();
         transitions.Add(transition2);
 
         // FSM
