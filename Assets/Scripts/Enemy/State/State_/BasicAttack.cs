@@ -16,4 +16,12 @@ public class BasicAttack : State
         transition.condition = new ToSkillAttack();
         transitions.Add(transition);
     }
+
+    public override void Update()
+    {
+        Debug.Log("ATTACK-BASIC");
+
+
+
+    }
 }

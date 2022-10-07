@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
     public GameObject target;
 
     public float recoveryHP = 0.1f;
+    public bool on;
 
     private void Awake()
     {
@@ -64,7 +65,6 @@ public class Enemy : MonoBehaviour
         sIdle.enabled = false;
         StateHighLevel sAttack = this.gameObject.AddComponent<Attack>();
         sAttack.enabled = false;
-
         StateHighLevel sMove = this.gameObject.AddComponent<Move>();
         sMove.enabled = false;
 
@@ -89,7 +89,16 @@ public class Enemy : MonoBehaviour
         Debug.Log("Complete the Set Enemy HFSM!");
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            on = true;
 
-    
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            on = false;
+    }
 }
 

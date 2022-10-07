@@ -14,17 +14,17 @@ public class State : MonoBehaviour
 
     public virtual void OnEnable()
     {
-        // 초기화 코드 작성
+        // 초기화 코드 
     }
 
     public virtual void OnDisable()
     {
-        // 종료코드 작성
+        // 종료 코드 
     }
 
     public virtual void Update()
     {
-        // 행위 관련 코드 작성
+        // 행위 관련 코드 
     }
 
     public void LateUpdate()
